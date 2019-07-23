@@ -9,6 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
+import { ResumeComponent } from './resume/resume.component';
+import { CoolstuffComponent } from './coolstuff/coolstuff.component';
+import { DevhelpComponent } from './devhelp/devhelp.component';
+import { SandboxprojectsComponent } from './sandboxprojects/sandboxprojects.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,7 +27,11 @@ const appRoutes: Routes = [
     HomeComponent,
     NavComponent,
     ContactComponent,
-    ErrorComponent
+    ErrorComponent,
+    ResumeComponent,
+    CoolstuffComponent,
+    DevhelpComponent,
+    SandboxprojectsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
