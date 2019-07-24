@@ -18,6 +18,9 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'coolstuff', component: CoolstuffComponent },
+  { path: 'devhelp', component: DevhelpComponent },
+  { path: 'sandboxprojects', component: SandboxprojectsComponent },
   { path: '**', component: ErrorComponent }
 ]
 

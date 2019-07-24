@@ -7,16 +7,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  @Output() featureSelected = new EventEmitter<string>();
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  onSelect(feature: string) {
-    console.log('onSelect hit')
-    this.featureSelected.emit(feature);
   }
 
 }
