@@ -1,15 +1,33 @@
-<div class='container'>
+<div class="container-fluid navigation">
+  <app-nav></app-nav>
+</div>
 
-  <div class="row">
+<div class="container-fluid fill">
+
+  <!--<div class="row navigation">
+    <div class="col-md-12 navigation">
+      <app-nav></app-nav>
+    </div>
+  </div>-->
+
+  <div class="row body">
     <div class="col-md-12">
-      <app-nav (featureSelected)="onNavigate($event)"></app-nav>
+      <router-outlet></router-outlet>
     </div>
   </div>
 
-   <div class="row">
-     <div class="col-md-3">
-       <router-outlet></router-outlet>
-     </div>
-   </div>
+  <!--<div class="row footer">
+    <div class="col-md-12">
+      <app-footer></app-footer>
+    </div>
+  </div>-->
 
+</div>
+
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <app-footer></app-footer>
+    </div>
   </div>
+</footer>

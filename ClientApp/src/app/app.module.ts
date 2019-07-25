@@ -13,6 +13,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { CoolstuffComponent } from './coolstuff/coolstuff.component';
 import { DevhelpComponent } from './devhelp/devhelp.component';
 import { SandboxprojectsComponent } from './sandboxprojects/sandboxprojects.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     ResumeComponent,
     CoolstuffComponent,
     DevhelpComponent,
-    SandboxprojectsComponent
+    SandboxprojectsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
