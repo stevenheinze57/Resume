@@ -3,21 +3,21 @@
       <a class="navbar-brand" routerLink="/">Steve's Resume Site</a>
     </div>
     <ul class="nav navbar-nav">
-      <li role="presentation" class="active"><a routerLink="home">Home</a></li>
+      <li role="presentation" routerLinkActive="active"><a routerLink="home">Home</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" routerLink="#">
           Resume/Portfolio<span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <li><a [routerLink]="['/resume', '/skillset']">Skillset</a></li>
-          <li><a [routerLink]="['/resume', '/education']">Education</a></li>
-          <li><a [routerLink]="['/resume', '/workexaperience']">Work Experience</a></li>
-          <li><a [routerLink]="['/resume', '/portfolio']">Developer Portfolio</a></li>
-          <li><a [routerLink]="['/resume', '/contact']">Contact</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['resume', 'skillset']">Skillset</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['resume', 'education']">Education</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['resume', 'workexperience']">Work Experience</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['resume', 'portfolio']">Developer Portfolio</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['resume', 'contact']">Contact</a></li>
         </ul>
       </li>
-      <li><a routerLink="coolstuff">Cool Stuff</a></li>
-      <li><a routerLink="devhelp">Dev Help</a></li>
-      <li><a routerLink="sandboxprojects">Sandbox Projects</a></li>
+      <li routerLinkActive="active"><a routerLink="coolstuff">Cool Stuff</a></li>
+      <li routerLinkActive="active"><a routerLink="devhelp">Dev Help</a></li>
+      <li routerLinkActive="active"><a routerLink="sandboxprojects">Sandbox Projects</a></li>
     </ul>
 </div>

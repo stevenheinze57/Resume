@@ -7,21 +7,33 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './resume/contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { ResumeComponent } from './resume/resume.component';
 import { CoolstuffComponent } from './coolstuff/coolstuff.component';
 import { DevhelpComponent } from './devhelp/devhelp.component';
-import { SandboxprojectsComponent } from './sandboxprojects/sandboxprojects.component';
+import { SandboxProjectsComponent } from './sandbox-projects/sandbox-projects.component';
 import { FooterComponent } from './footer/footer.component';
+import { SkillsetComponent } from './resume/skillset/skillset.component';
+import { PortfolioComponent } from './resume/portfolio/portfolio.component';
+import { EducationComponent } from './resume/education/education.component';
+import { WorkExperienceComponent } from './resume/work-experience/work-experience.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent },
+  {
+    path: 'resume', component: ResumeComponent, children: [
+      { path: 'skillset', component: SkillsetComponent },
+      { path: 'education', component: EducationComponent },
+      { path: 'workexperience', component: WorkExperienceComponent },
+      { path: 'portfolio', component: PortfolioComponent },
+      { path: 'contact', component: ContactComponent }
+    ]
+  },
   { path: 'coolstuff', component: CoolstuffComponent },
   { path: 'devhelp', component: DevhelpComponent },
-  { path: 'sandboxprojects', component: SandboxprojectsComponent },
+  { path: 'sandboxprojects', component: SandboxProjectsComponent },
   { path: '**', component: ErrorComponent }
 ]
 
@@ -35,8 +47,12 @@ const appRoutes: Routes = [
     ResumeComponent,
     CoolstuffComponent,
     DevhelpComponent,
-    SandboxprojectsComponent,
-    FooterComponent
+    FooterComponent,
+    SkillsetComponent,
+    PortfolioComponent,
+    EducationComponent,
+    WorkExperienceComponent,
+    SandboxProjectsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
