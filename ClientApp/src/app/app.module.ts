@@ -18,6 +18,8 @@ import { SkillsetComponent } from './resume/skillset/skillset.component';
 import { PortfolioComponent } from './resume/portfolio/portfolio.component';
 import { EducationComponent } from './resume/education/education.component';
 import { WorkExperienceComponent } from './resume/work-experience/work-experience.component';
+import { CarouselComponent } from './home/carousel/carousel.component';
+import { CardsComponent } from './home/cards/cards.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -52,7 +54,9 @@ const appRoutes: Routes = [
     PortfolioComponent,
     EducationComponent,
     WorkExperienceComponent,
-    SandboxProjectsComponent
+    SandboxProjectsComponent,
+    CarouselComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
