@@ -7,14 +7,24 @@
   padding-top: 2%;
   padding-bottom: 2%;
 }
-@media (min-width: 768px) {
 
+.carousel-inner img {
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .carousel-inner img {
+    margin: auto;
+  }
 }
 /* md */
 @media (min-width: 992px) {
   .carousel {
     height: 60%;
     width: 60%;
+  }
+  .carousel-inner img {
+    margin: auto;
   }
 }
 /* lg */

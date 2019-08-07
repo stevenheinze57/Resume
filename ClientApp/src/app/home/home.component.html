@@ -1,5 +1,15 @@
 <div class="container-fluid">
 
+  <!-- TODO: Make this introduction section it's own component -->
+  <!-- All content should be bootstrapped/defined in the home.component.ts
+       and should be passed to the below components to be rendered.
+
+       This should be the strategy going forward for all other pages.
+      -->
+
+  <!-- TODO: Refactor all sub-components creating a service that returns
+       column styles like the one used below (but for all types of column layouts).
+      -->
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="pull-left headshot"><img src="../assets/images/headshot.jpg" class="img-responsive" alt="Personal Headshot" /></div>
@@ -18,57 +28,10 @@
     </div>
   </div>
 
+  <!-- TODO: Refactor the carousel component -->
   <app-carousel></app-carousel>
 
-  <!-- TODO: Refactor the below cards to be implemented through typescript/angular -->
-  <div class="row" style="display: flex;">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-
-      <div class="card">
-        <img class="card-img-top" src="../../assets/images/portfolio-slide.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-
-      <div class="card">
-        <img class="card-img-top" src="../../assets/images/portfolio-slide.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Download a PDF version fo my resume here!</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="row" style="display: flex; padding-top: 2%; padding-bottom: 2%;">
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <div class="card">
-        <img class="card-img-top" src="../../assets/images/portfolio-slide.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Take a look at this site's source code here!</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <div class="card">
-        <img class="card-img-top" src="../../assets/images/portfolio-slide.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Learn how I automate this site's development</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <div class="card">
-        <img class="card-img-top" src="../../assets/images/portfolio-slide.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Want to hire me...?</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-cards [cardDeck]="cardset1"></app-cards>
+  <app-cards [cardDeck]="cardset2"></app-cards>
 
 </div>

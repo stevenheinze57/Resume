@@ -1,3 +1,10 @@
-<p>
-  cards works!
-</p>
+<div class="row" style="display: flex; padding-top: 2%; padding-bottom: 2%;">
+  <div [class]="columnLayout" *ngFor="let card of cardDeck">
+    <div class="card">
+      <img class="card-img-top" src="../../../assets/images/{{ card.cardImage }}" alt="Card Image">
+      <div class="card-body">
+        <p class="card-text">{{ card.cardText }}</p>
+      </div>
+    </div>
+  </div>
+</div>
