@@ -20,6 +20,7 @@ import { EducationComponent } from './resume/education/education.component';
 import { WorkExperienceComponent } from './resume/work-experience/work-experience.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { CardsComponent } from './home/cards/cards.component';
+import { IntroComponent } from './home/intro/intro.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     WorkExperienceComponent,
     SandboxProjectsComponent,
     CarouselComponent,
-    CardsComponent
+    CardsComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

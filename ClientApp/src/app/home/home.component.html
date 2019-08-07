@@ -1,34 +1,10 @@
 <div class="container-fluid">
 
-  <!-- TODO: Make this introduction section it's own component -->
-  <!-- All content should be bootstrapped/defined in the home.component.ts
-       and should be passed to the below components to be rendered.
-
-       This should be the strategy going forward for all other pages.
-      -->
-
   <!-- TODO: Refactor all sub-components creating a service that returns
        column styles like the one used below (but for all types of column layouts).
       -->
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="pull-left headshot"><img src="../assets/images/headshot.jpg" class="img-responsive" alt="Personal Headshot" /></div>
-      <div class="introduction">
-        At vel mazim dolore sit duo sed sanctus kasd eos ut accusam in
-        no voluptua elitr et praesent assum id voluptua rebum sadipscing
-        magna sit doming vero ullamcorper lorem sit diam est amet diam rebum
-        placerat sadipscing odio diam vero accusam ut et sed tation
-        sanctus dolore voluptua sadipscing lorem aliquip sit labore duo
-        justo aliquyam dolor tation diam et vero voluptua sea at sit
-        voluptua accusam aliquip eum cum ipsum sit et wisi eos velit elitr
-        dolor sadipscing in kasd amet quis consetetur lorem ea dignissim
-        ipsum dolor duo nonumy dolor feugiat sit praesent amet sea rebum
-        facilisis invidunt vel dolore magna ut eos sanctus et diam facilisis nibh eirmod labore dolor erat exerci accumsan elit rebum euismod adipiscing ut vero clita dolor ea aliquyam zzril sea dolor nonummy amet vel ut takimata dignissim erat dignissim diam iusto in tation gubergren dolor no dolore lobortis lorem magna molestie sadipscing et amet blandit dolore nobis duis ipsum praesent no et feugait erat diam tempor rebum takimata aliquyam clita rebum euismod justo sed at sit at invidunt ipsum lorem dolores euismod aliquyam duo accusam ipsum amet est aliquyam at et no autem ipsum erat rebum justo eirmod diam dolore quis accusam at eirmod dolores sadipscing at sadipscing et enim takimata et takimata option amet lorem amet sed consequat velit elitr sed aliquyam nonumy ullamcorper est labore dolores sadipscing kasd eu tempor nostrud nulla voluptua eum tempor elitr sit diam erat invidunt ea aliquyam amet sea ipsum amet invidunt dolore et diam nostrud no diam tempor at invidunt sit exerci no elitr lorem no amet accusam dolore dolores vero lorem amet ipsum justo aliquam lobortis sanctus sed lorem nonumy ipsum ipsum justo duis kasd sed lorem doming sit erat iusto accusam erat feugait takimata justo nam suscipit quis eu aliquyam dolore cum
-      </div>
-    </div>
-  </div>
+  <app-intro [headshot]="introHeadshot" [introduction]="introText"></app-intro>
 
-  <!-- TODO: Refactor the carousel component -->
   <app-carousel [carouselSlideDeck]="carouselSlideSet"></app-carousel>
 
   <app-cards [cardDeck]="cardset1"></app-cards>
