@@ -5,23 +5,20 @@
       <div id="myCarousel" class="carousel slide justify-content-center" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li [ngClass]="carouselSlide.activeFirst == true ? 'active':''"
+              *ngFor="let carouselSlide of carouselSlideDeck; let i = index"
+              data-target="#myCarousel"
+              [attr.data-slide-to]="i"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-          <div class="item active">
-            <img src="../../assets/images/portfolio-slide.jpeg" alt="Portfolio">
-          </div>
-
-          <div class="item">
-            <img src="../../assets/images/dev-help-slide.jpg" alt="Dev Help">
-          </div>
-
-          <div class="item">
-            <img src="../../assets/images/sandbox-projects-slide.jpg" alt="Sandbox Projects">
+          <div [ngClass]="carouselSlide.activeFirst == true ? 'item active':'item'" *ngFor="let carouselSlide of carouselSlideDeck">
+            <img src="../../../assets/images/{{ carouselSlide.slideImage }}" alt="Carousel Slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>{{ carouselSlide.slideLabel }}</h5>
+              <p>{{ carouselSlide.slideText }}</p>
+            </div>
           </div>
         </div>
 

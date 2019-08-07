@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Optional } from '@angular/core';
+import { CarouselSlide } from '../models/carouselslide.model';
 
 @Component({
   selector: 'app-carousel',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor() { }
+  @Input() carouselSlideDeck: CarouselSlide[];
+
+  constructor(@Optional() carouselSlideDeck: CarouselSlide[]) {
+    this.carouselSlideDeck = carouselSlideDeck;
+  }
 
   ngOnInit() {
   }

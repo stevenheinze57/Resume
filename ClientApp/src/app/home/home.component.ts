@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Card } from './models/card.model';
+import { CarouselSlide } from './models/carouselslide.model';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,23 @@ import { Card } from './models/card.model';
 })
 export class HomeComponent implements OnInit {
 
+  @Output() carouselSlideSet: CarouselSlide[];
   @Output() cardset1: Card[];
   @Output() cardset2: Card[];
 
   constructor() { }
 
   ngOnInit() {
-    this.constructCardSets()
+    this.constructCarouselSet();
+    this.constructCardSets();
+  }
+
+  constructCarouselSet() {
+    this.carouselSlideSet = [
+      new CarouselSlide("portfolio-slide.jpeg", "First Slide Label", "Iriure et volutpat nonummy delenit", true);
+      new CarouselSlide("dev-help-slide.jpg", "Second Slide Label", "Clita nibh vero augue aliquyam", false);
+      new CarouselSlide("sandbox-projects-slide.jpg", "Third Slide Label", "Sit in consetetur feugiat sit", false);
+    ]
   }
 
   constructCardSets() {
