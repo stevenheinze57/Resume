@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsetComponent implements OnInit {
 
+  accordionActive: boolean = true
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleAccordionActive(event) {
+    this.accordionActive = !(this.accordionActive);
   }
 
 }

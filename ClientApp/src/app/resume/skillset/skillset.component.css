@@ -4,3 +4,9 @@
 a:hover {
   color: white;
 }
+a:focus {
+  color: white;
+}
+.panel-heading {
+  background-color: darkgray;
+}
