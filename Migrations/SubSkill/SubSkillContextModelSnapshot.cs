@@ -2,21 +2,19 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ResumeSite.Models;
 
 namespace Websites.Migrations.SubSkill
 {
     [DbContext(typeof(SubSkillContext))]
-    [Migration("20190423034642_AddSubSkillToDB")]
-    partial class AddSubSkillToDB
+    partial class SubSkillContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -28,7 +26,13 @@ namespace Websites.Migrations.SubSkill
 
                     b.Property<int>("ConfidenceLevel");
 
+                    b.Property<string>("Description");
+
                     b.Property<string>("Name");
+
+                    b.Property<int>("ParentSkillId");
+
+                    b.Property<int>("Scope");
 
                     b.Property<int>("YearsOfExperience");
 

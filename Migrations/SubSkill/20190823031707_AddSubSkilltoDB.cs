@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Websites.Migrations.SubSkill
 {
-    public partial class AddSubSkillToDB : Migration
+    public partial class AddSubSkilltoDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,11 +11,14 @@ namespace Websites.Migrations.SubSkill
                 name: "SubSkills",
                 columns: table => new
                 {
-                    Name = table.Column<string>(nullable: true),
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
                     ConfidenceLevel = table.Column<int>(nullable: false),
-                    YearsOfExperience = table.Column<int>(nullable: false)
+                    YearsOfExperience = table.Column<int>(nullable: false),
+                    Scope = table.Column<int>(nullable: false),
+                    ParentSkillId = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

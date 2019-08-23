@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { debug } from 'util';
 
 @Component({
   selector: 'app-skillset',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsetComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private httpService: HttpClient) { }
+  skills: Skill[];
   ngOnInit() {
+    this.httpService.get('https://localhost:5001/api/skills').subscribe(data => { this.skills = data as Skill[]; });
+    console.log(this.skills);
   }
 
 }

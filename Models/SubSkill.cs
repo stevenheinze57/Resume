@@ -4,8 +4,7 @@ namespace ResumeSite.Models
 {
     public class SubSkill : Skill
     {
-        public int Id { get; set; }
-        public int ConfidenceLevel { get; set;}
-        public int YearsOfExperience { get; set; }
+        public int ParentSkillId { get; set; }
+        public string Description { get; set; }
     }
 }

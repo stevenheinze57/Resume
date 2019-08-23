@@ -14,7 +14,7 @@ namespace Websites.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -27,6 +27,10 @@ namespace Websites.Migrations
                     b.Property<int>("ConfidenceLevel");
 
                     b.Property<string>("Name");
+
+                    b.Property<int>("Scope");
+
+                    b.Property<int>("YearsOfExperience");
 
                     b.HasKey("Id");
 

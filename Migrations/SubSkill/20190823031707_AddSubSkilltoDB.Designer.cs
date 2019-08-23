@@ -6,21 +6,21 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ResumeSite.Models;
 
-namespace Websites.Migrations
+namespace Websites.Migrations.SubSkill
 {
-    [DbContext(typeof(SkillContext))]
-    [Migration("20190423034616_AddSkillToDB")]
-    partial class AddSkillToDB
+    [DbContext(typeof(SubSkillContext))]
+    [Migration("20190823031707_AddSubSkilltoDB")]
+    partial class AddSubSkilltoDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ResumeSite.Models.Skill", b =>
+            modelBuilder.Entity("ResumeSite.Models.SubSkill", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -28,11 +28,19 @@ namespace Websites.Migrations
 
                     b.Property<int>("ConfidenceLevel");
 
+                    b.Property<string>("Description");
+
                     b.Property<string>("Name");
+
+                    b.Property<int>("ParentSkillId");
+
+                    b.Property<int>("Scope");
+
+                    b.Property<int>("YearsOfExperience");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Skills");
+                    b.ToTable("SubSkills");
                 });
 #pragma warning restore 612, 618
         }

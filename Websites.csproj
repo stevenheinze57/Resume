@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,16 +28,18 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\home\models\card.model.ts" />
     <None Remove="ClientApp\src\app\home\models\carouselslide.model.ts" />
+    <None Remove="ClientApp\src\app\resume\skillset\models\skill.model.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ClientApp\src\app\services\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\home\models\card.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\home\models\carouselslide.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\models\skill.model.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
