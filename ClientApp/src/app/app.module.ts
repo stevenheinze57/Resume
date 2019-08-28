@@ -21,6 +21,7 @@ import { WorkExperienceComponent } from './resume/work-experience/work-experienc
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { CardsComponent } from './home/cards/cards.component';
 import { IntroComponent } from './home/intro/intro.component';
+import { SkillsetService } from './resume/skillset/services/skillset-service.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -68,7 +69,7 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [],
+  providers: [SkillsetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

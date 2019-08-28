@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using ResumeSite.Models;
 using Microsoft.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using Websites.Helpers;
 
 namespace Websites
 {
@@ -26,6 +28,15 @@ namespace Websites
             services.AddDbContext<SubSkillContext>
                 (opt => opt.UseSqlServer(Configuration["Data:Connection:ConnectionString"]));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // Auto Mapper Configurations
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new DataMapper());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using ResumeSite.Dtos;
 using ResumeSite.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -14,16 +16,20 @@ namespace Websites.Controllers
     {
 
         private readonly SkillContext _skillcontext;
+        private readonly IMapper _mapper;
 
-        public SkillsController(SkillContext skillContext)
+        public SkillsController(SkillContext skillContext, IMapper mapper)
         {
             _skillcontext = skillContext;
+            _mapper = mapper;
         }
 
         // GET: api/<controller>
         [HttpGet]
         public ActionResult<IEnumerable<Skill>> GetSkills()
         {
+            //var skillsData = _skillcontext.Skills;
+            //var skillsDto = _mapper.Map<GetSkillsDto>(skillsData);
             return _skillcontext.Skills;
         }
 

@@ -1,5 +1,5 @@
 
-class Skill {
+export class Skill {
 
   public Id: number;
   public Name: string;
