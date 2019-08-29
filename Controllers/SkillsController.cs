@@ -16,12 +16,12 @@ namespace Websites.Controllers
     {
 
         private readonly SkillContext _skillcontext;
-        private readonly IMapper _mapper;
+        //private readonly IMapper _mapper;
 
-        public SkillsController(SkillContext skillContext, IMapper mapper)
+        public SkillsController(SkillContext skillContext)
         {
             _skillcontext = skillContext;
-            _mapper = mapper;
+            //_mapper = mapper;
         }
 
         // GET: api/<controller>

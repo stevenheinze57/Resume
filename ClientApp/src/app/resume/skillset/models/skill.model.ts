@@ -1,10 +1,11 @@
+import { SubSkill } from "./subskill.model";
 
 export class Skill {
 
-  public Id: number;
-  public Name: string;
-  public ConfidenceLevel: number;
-  public YearsOfExperience: number;
-  public Scope: number;
-
+  public id: number;
+  public name: string;
+  public confidenceLevel: number;
+  public yearsOfExperience: number;
+  public scope: number;
+  public subSkills: SubSkill[];
 }

@@ -7,7 +7,7 @@
       <div *ngFor="let skill of skills; let skillId = index">
 
         <!-- Parent Skill Heading -->
-        <a [attr.id]="'ParentSkill' + skillId" class="skillHeading h4" data-parent="#accordion" data-toggle="collapse" [attr.href]="'#parentSkillAccordion' + skillId" role="button" aria-expanded="false" [attr.aria-controls]="'parentSkillAccordion' + skillId"><strong>{{ skill.name }}<span class="caret"></span></strong></a>
+        <a [attr.id]="'ParentSkill' + skillId" class="skillHeading h4" data-parent="#accordion" data-toggle="collapse" [attr.href]="'#parentSkillAccordion' + skillId" role="button" [attr.aria-controls]="'parentSkillAccordion' + skillId"><strong>{{ skill.name }}<span class="caret"></span></strong></a>
         <div class="progress">
           <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
             <!-- Progress Bar -->
@@ -15,58 +15,33 @@
         </div>
 
         <!-- Child Skill Accordion Wrapper -->
-        <div class="panel-collapse collapse in" role="tabpanel" [attr.id]="'parentSkillAccordion' + skillId" [attr.aria-labelledby]="'ParentSkill' + skillId">
+        <div class="panel-collapse collapse" role="tabpanel" [attr.id]="'parentSkillAccordion' + skillId" [attr.aria-labelledby]="'ParentSkill' + skillId">
 
           <!-- Child Skill Accordion -->
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-            <!-- Child Skill Accordion Item -->
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Subskill 1
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
+            <div>
+              <div *ngFor="let subSkill of skill.subSkills; let subSkillId = index">
 
-            <!-- Child Skill Accordion Item -->
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingTwo">
-                <h4 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Subskill 2
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                <!-- Child Skill Accordion Item -->
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" [attr.id]="'heading' + subSkillId + skillId">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" [attr.href]="'#collapse' + subSkillId + skillId" [attr.aria-controls]="'collapse' + subSkillId + skillId">
+                        {{ subSkill.name }}
+                      </a>
+                    </h4>
+                  </div>
+                  <div [attr.id]="'collapse' + subSkillId + skillId" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'heading' + subSkillId + skillId">
+                    <div class="panel-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- Child Skill Accordion Item -->
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Subskill 3
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
               </div>
             </div>
+            <!-- End of For loop for the child accordion -->
 
           </div>
           <!-- End of child skill accordion -->
@@ -74,8 +49,9 @@
         </div>
         <!-- End of child skill accordion wrapper -->
 
-
       </div>
+      <!-- End of For loop for the parent skill -->
+
     </div>
     <!-- End of For Loop for Parent Skills -->
 

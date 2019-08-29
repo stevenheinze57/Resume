@@ -15,4 +15,8 @@ export class SkillsetService {
     return this.httpClient.get<Skill[]>('https://localhost:5001/api/skills');
   }
 
+  getSubSkills(): Observable<Skill[]> {
+    return this.httpClient.get<Skill[]>('https://localhost:5001/api/subskills');
+  }
+
 }
