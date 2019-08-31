@@ -3,20 +3,23 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Skill } from '../models/skill.model';
+import { SubSkill } from '../models/subskill.model';
 
 @Injectable()
 export class SkillsetService {
 
-  skillsApiUrl = "http://localhost:5001/api/skills";
+  // TODO: eventually pass these in as arguments to the http clients below
+  SKILLS_API_URL: string = 'https://localhost:5001/api/skills';
+  SUBSKILLS_API_URL: string = 'https://localhost:5001/api/subskills';
 
   constructor(private httpClient: HttpClient) { }
 
-  getSkills(): Observable<Skill[]> {
-    return this.httpClient.get<Skill[]>('https://localhost:5001/api/skills');
+  getSkills() {
+    return this.httpClient.get<Skill[]>('https://localhost:5001/api/skills'); 
   }
 
-  getSubSkills(): Observable<Skill[]> {
-    return this.httpClient.get<Skill[]>('https://localhost:5001/api/subskills');
+  getSubSkills() {
+    return this.httpClient.get<SubSkill[]>('https://localhost:5001/api/subskills');
   }
 
 }

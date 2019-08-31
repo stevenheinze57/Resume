@@ -31,6 +31,8 @@
     <None Remove="ClientApp\src\app\home\models\card.model.ts" />
     <None Remove="ClientApp\src\app\home\models\carouselslide.model.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\models\skill.model.ts" />
+    <None Remove="ClientApp\src\app\resume\skillset\services\skills-resolver.ts" />
+    <None Remove="ClientApp\src\app\resume\skillset\services\subskills-resolver.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +44,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\home\models\card.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\home\models\carouselslide.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\models\skill.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\services\skills-resolver.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\services\subskills-resolver.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

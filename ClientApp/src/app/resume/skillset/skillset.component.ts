@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { SkillsetService } from './services/skillset-service.service';
 import { Skill } from './models/skill.model';
 import { SubSkill } from './models/subskill.model'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-skillset',
@@ -18,28 +19,38 @@ export class SkillsetComponent implements OnInit {
   @Output() subSkills: SubSkill[] = [];
   @Output() renderSkills: boolean = false;
 
-  constructor(private skillsetService: SkillsetService) { }
-
-  ngOnInit() {
-    let skillsData: Skill[];
-    let subSkillsData: SubSkill[];
-
-    this.skillsetService.getSubSkills().subscribe(data =>
-    {
-      subSkillsData = data as SubSkill[];
-    });
-
-    this.skillsetService.getSkills().subscribe(data => {
-      skillsData = data as Skill[];
-      if (skillsData.length != 0 && subSkillsData.length != 0) {
-        this.skills = skillsData;
-        this.subSkills = subSkillsData;
-        this.mapSubSkills();
-        this.renderSkills = true;
-      }
-    });
+  constructor(private service: SkillsetService, private route: ActivatedRoute) {
   }
   
+  ngOnInit() {
+    this.skills = this.route.snapshot.data.skillsData;
+    this.subSkills = this.route.snapshot.data.subSkillsData;
+
+    console.log(this.skills);
+    console.log(this.subSkills);
+
+    if (this.checkData(this.skills) && this.checkData(this.subSkills)) {
+      this.mapSubSkills();
+      //this.sortSkillsByImportance();
+      //this.sortSubSkillsByImportance();
+      // Some way, the most optimal... to render the progress bar based on the skill confidence level and scope
+      this.renderSkills = true;
+    }
+  }
+
+  checkData(data: any[]) {
+    return (data.length != 0 && data != null) ? true : false;
+  }
+
+  sortSubSkillsByImportance() {
+    for (let y = 0; y < this.skills.length; y++) {
+      // some sorting method (look back at old schoolwork)
+    }
+  }
+  
+  sortSkillsByImportance() {
+    // some sorting method (look back at old schoolwork)
+  }
 
   mapSubSkills() {
     for (let x = 0; x < this.skills.length; x++) {

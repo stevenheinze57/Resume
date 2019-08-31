@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,13 +22,16 @@ import { CarouselComponent } from './home/carousel/carousel.component';
 import { CardsComponent } from './home/cards/cards.component';
 import { IntroComponent } from './home/intro/intro.component';
 import { SkillsetService } from './resume/skillset/services/skillset-service.service';
+import { SubSkill } from './resume/skillset/models/subskill.model';
+import { SkillsResolver } from './resume/skillset/services/skills-resolver';
+import { SubSkillsResolver } from './resume/skillset/services/subskills-resolver';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {
     path: 'resume', component: ResumeComponent, children: [
-      { path: 'skillset', component: SkillsetComponent },
+      { path: 'skillset', component: SkillsetComponent, resolve: { skillsData: SkillsResolver, subSkillsData: SubSkillsResolver } },
       { path: 'education', component: EducationComponent },
       { path: 'workexperience', component: WorkExperienceComponent },
       { path: 'portfolio', component: PortfolioComponent },
@@ -69,7 +72,8 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [SkillsetService],
+  providers: [SkillsetService, SkillsResolver, SubSkillsResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
