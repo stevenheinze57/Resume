@@ -10,6 +10,7 @@ using Microsoft.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using Websites.Helpers;
+using Websites.Models;
 
 namespace Websites
 {
@@ -26,6 +27,8 @@ namespace Websites
             services.AddDbContext<SkillContext>
                 (opt => opt.UseSqlServer(Configuration["Data:Connection:ConnectionString"]));
             services.AddDbContext<SubSkillContext>
+                (opt => opt.UseSqlServer(Configuration["Data:Connection:ConnectionString"]));
+            services.AddDbContext<FutureSkillContext>
                 (opt => opt.UseSqlServer(Configuration["Data:Connection:ConnectionString"]));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

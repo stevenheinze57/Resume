@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Websites.Controllers
 {
     [Route("api/[controller]")]
-    public class SubSkillsController
+    public class SubSkillsController : Controller
     {
 
         private readonly SubSkillContext _subskillcontext;

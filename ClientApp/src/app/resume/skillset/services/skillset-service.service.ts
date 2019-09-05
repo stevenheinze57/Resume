@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule } from '@a
 import { catchError, tap, map } from 'rxjs/operators';
 import { Skill } from '../models/skill.model';
 import { SubSkill } from '../models/subskill.model';
+import { FutureSkill } from '../models/futureskill';
 
 @Injectable()
 export class SkillsetService {
@@ -20,6 +21,10 @@ export class SkillsetService {
 
   getSubSkills() {
     return this.httpClient.get<SubSkill[]>('https://localhost:5001/api/subskills');
+  }
+
+  getFutureSkills() {
+    return this.httpClient.get<FutureSkill[]>('https://localhost:5001/api/futureskills');
   }
 
 }

@@ -25,13 +25,16 @@ import { SkillsetService } from './resume/skillset/services/skillset-service.ser
 import { SubSkill } from './resume/skillset/models/subskill.model';
 import { SkillsResolver } from './resume/skillset/services/skills-resolver';
 import { SubSkillsResolver } from './resume/skillset/services/subskills-resolver';
+import { SkillsDirective } from './resume/skillset/directives/skills.directive';
+import { FutureSkill } from './resume/skillset/models/futureskill';
+import { FutureSkillsResolver } from './resume/skillset/services/futureskills-resolver';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {
     path: 'resume', component: ResumeComponent, children: [
-      { path: 'skillset', component: SkillsetComponent, resolve: { skillsData: SkillsResolver, subSkillsData: SubSkillsResolver } },
+      { path: 'skillset', component: SkillsetComponent, resolve: { skillsData: SkillsResolver, subSkillsData: SubSkillsResolver, futureSkillsData: FutureSkillsResolver } },
       { path: 'education', component: EducationComponent },
       { path: 'workexperience', component: WorkExperienceComponent },
       { path: 'portfolio', component: PortfolioComponent },
@@ -62,7 +65,8 @@ const appRoutes: Routes = [
     SandboxProjectsComponent,
     CarouselComponent,
     CardsComponent,
-    IntroComponent
+    IntroComponent,
+    SkillsDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -72,7 +76,7 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [SkillsetService, SkillsResolver, SubSkillsResolver],
+  providers: [SkillsetService, SkillsResolver, SubSkillsResolver, FutureSkillsResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

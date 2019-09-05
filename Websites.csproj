@@ -30,7 +30,10 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\home\models\card.model.ts" />
     <None Remove="ClientApp\src\app\home\models\carouselslide.model.ts" />
+    <None Remove="ClientApp\src\app\resume\skillset\directives\skills.directive.ts" />
+    <None Remove="ClientApp\src\app\resume\skillset\models\futureskill.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\models\skill.model.ts" />
+    <None Remove="ClientApp\src\app\resume\skillset\services\futureskills-resolver.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\services\skills-resolver.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\services\subskills-resolver.ts" />
   </ItemGroup>
@@ -43,7 +46,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\home\models\card.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\home\models\carouselslide.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\directives\skills.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\models\futureskill.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\models\skill.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\services\futureskills-resolver.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\services\skills-resolver.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\services\subskills-resolver.ts" />
   </ItemGroup>

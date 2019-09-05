@@ -7,6 +7,7 @@ import { SkillsetService } from './services/skillset-service.service';
 import { Skill } from './models/skill.model';
 import { SubSkill } from './models/subskill.model'
 import { ActivatedRoute } from '@angular/router';
+import { FutureSkill } from './models/futureskill';
 
 @Component({
   selector: 'app-skillset',
@@ -17,6 +18,8 @@ export class SkillsetComponent implements OnInit {
 
   @Output() skills: Skill[] = [];
   @Output() subSkills: SubSkill[] = [];
+  futureSkills: FutureSkill[] = [];
+  @Output() futureSkillsGrouped: any[] = [];
   @Output() renderSkills: boolean = false;
 
   constructor(private service: SkillsetService, private route: ActivatedRoute) {
@@ -25,31 +28,33 @@ export class SkillsetComponent implements OnInit {
   ngOnInit() {
     this.skills = this.route.snapshot.data.skillsData;
     this.subSkills = this.route.snapshot.data.subSkillsData;
+    this.futureSkills = this.route.snapshot.data.futureSkillsData;
 
-    console.log(this.skills);
-    console.log(this.subSkills);
+    //console.log(this.skills);
+    //console.log(this.subSkills);
+    //console.log(this.futureSkills);
 
-    if (this.checkData(this.skills) && this.checkData(this.subSkills)) {
+    if (this.checkData(this.skills) && this.checkData(this.subSkills) && this.checkData(this.futureSkills)) {
+      this.sortSkillsByImportance();
+      this.sortSubSkillsByImportance();
       this.mapSubSkills();
-      //this.sortSkillsByImportance();
-      //this.sortSubSkillsByImportance();
-      // Some way, the most optimal... to render the progress bar based on the skill confidence level and scope
+      this.sortFutureSkillsByInterest();
+      this.groupFutureSkills();
+      console.log(this.futureSkillsGrouped)
       this.renderSkills = true;
     }
   }
 
-  checkData(data: any[]) {
-    return (data.length != 0 && data != null) ? true : false;
-  }
-
   sortSubSkillsByImportance() {
-    for (let y = 0; y < this.skills.length; y++) {
-      // some sorting method (look back at old schoolwork)
-    }
+    this.subSkills = this.currentSkillsSorter(this.subSkills);
   }
   
   sortSkillsByImportance() {
-    // some sorting method (look back at old schoolwork)
+    this.skills = this.currentSkillsSorter(this.skills);
+  }
+
+  sortFutureSkillsByInterest() {
+    this.futureSkills = this.futureSkillsSorter(this.futureSkills);
   }
 
   mapSubSkills() {
@@ -62,6 +67,48 @@ export class SkillsetComponent implements OnInit {
         }
       }
     }
+  }
+
+  groupFutureSkills() {
+    var tempArray = [];
+    for (let x = 1; x < this.futureSkills.length + 1; x++) {
+      tempArray.push(this.futureSkills[x - 1]);
+      if (x != 1) {
+        if (this.futureSkills.length % x == 0 || this.futureSkills.length % x == 3) {
+          this.futureSkillsGrouped.push(tempArray);
+          tempArray = [];
+        }
+      }
+    }
+  }
+
+  // Helper Methods
+  currentSkillsSorter(dataToSort) {
+    return dataToSort.sort(function (a, b) {
+      if (a.scope >= b.scope) {
+        if (a.confidenceLevel >= b.confidenceLevel) {
+          return -1;
+        } else {
+          return 1;
+        }
+      } else {
+        return 1;
+      }
+    });
+  }
+
+  futureSkillsSorter(dataToSort) {
+    return dataToSort.sort(function (a, b) {
+      if (a.interestLevel >= b.interestLevel) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+  }
+
+  checkData(data: any[]) {
+    return (data.length != 0 && data != null) ? true : false;
   }
 
 }
