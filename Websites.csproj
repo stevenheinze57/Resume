@@ -30,6 +30,7 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\home\models\card.model.ts" />
     <None Remove="ClientApp\src\app\home\models\carouselslide.model.ts" />
+    <None Remove="ClientApp\src\app\resume\skillset\directives\futureskills.directive.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\directives\skills.directive.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\models\futureskill.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\models\skill.model.ts" />
@@ -46,12 +47,13 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\home\models\card.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\home\models\carouselslide.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\directives\futureskills.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\directives\skills.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\models\futureskill.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\models\skill.model.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\services\futureskills-resolver.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\services\skills-resolver.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\services\subskills-resolver.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\resolvers\futureskills-resolver.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\resolvers\skills-resolver.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\resolvers\subskills-resolver.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

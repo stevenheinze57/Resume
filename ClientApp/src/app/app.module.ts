@@ -29,6 +29,8 @@ import { FutureSkillsDirective } from './resume/skillset/directives/futureskills
 import { SubSkillsResolver } from './resume/skillset/resolvers/subskills-resolver';
 import { FutureSkillsResolver } from './resume/skillset/resolvers/futureskills-resolver';
 import { SkillsResolver } from './resume/skillset/resolvers/skills-resolver';
+import { CurrentSkillsComponent } from './resume/skillset/current-skills/current-skills.component';
+import { FutureSkillsComponent } from './resume/skillset/future-skills/future-skills.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -68,7 +70,9 @@ const appRoutes: Routes = [
     CardsComponent,
     IntroComponent,
     SkillsDirective,
-    FutureSkillsDirective
+    FutureSkillsDirective,
+    CurrentSkillsComponent,
+    FutureSkillsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

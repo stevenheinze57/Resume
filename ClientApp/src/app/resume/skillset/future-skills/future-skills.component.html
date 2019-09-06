@@ -1,0 +1,11 @@
+<div *ngFor="let futureSkillGroup of futureSkillsGrouped;" class="row row-no-gutters">
+  <div futureSkillsDirective [futureSkillGroup]="futureSkillGroup" class="" *ngFor="let futureSkill of futureSkillGroup">
+
+
+    <div class="future-skill-button btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+      <a [attr.href]="futureSkill.infoLink" target="_blank" type="button" class="btn btn-default">{{futureSkill.name}}</a>
+    </div>
+
+  </div>
+
+</div>
