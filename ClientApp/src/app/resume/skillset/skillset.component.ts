@@ -22,7 +22,7 @@ export class SkillsetComponent implements OnInit {
   @Output() futureSkillsGrouped: any[] = [];
   @Output() renderSkills: boolean = false;
 
-  constructor(private service: SkillsetService, private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
   }
   
   ngOnInit() {
@@ -40,7 +40,6 @@ export class SkillsetComponent implements OnInit {
       this.mapSubSkills();
       this.sortFutureSkillsByInterest();
       this.groupFutureSkills();
-      console.log(this.futureSkillsGrouped)
       this.renderSkills = true;
     }
   }
@@ -71,13 +70,28 @@ export class SkillsetComponent implements OnInit {
 
   groupFutureSkills() {
     var tempArray = [];
-    for (let x = 1; x < this.futureSkills.length + 1; x++) {
-      tempArray.push(this.futureSkills[x - 1]);
-      if (x != 1) {
-        if (this.futureSkills.length % x == 0 || this.futureSkills.length % x == 3) {
-          this.futureSkillsGrouped.push(tempArray);
-          tempArray = [];
-        }
+    var tempIndex = 0;
+    var arraySizeToggle = true;
+    for (let x = 0; x < this.futureSkills.length; x++) {
+      tempArray.push(this.futureSkills[x]);
+      tempIndex++;
+      if (arraySizeToggle && tempIndex == 3) {
+        this.futureSkillsGrouped.push(tempArray)
+        arraySizeToggle = false;
+        tempArray = [];
+        tempIndex = 0;
+      } else if (!arraySizeToggle && tempIndex == 2) {
+        this.futureSkillsGrouped.push(tempArray)
+        arraySizeToggle = true;
+        tempArray = [];
+        tempIndex = 0;
+      } else if (this.futureSkills.length - x - 1 == 3) {
+        this.futureSkillsGrouped.push(tempArray)
+        arraySizeToggle = false;
+        tempArray = [];
+        tempIndex = 0;
+      } else if (this.futureSkills.length == x + 1) {
+        this.futureSkillsGrouped.push(tempArray)
       }
     }
   }

@@ -80,19 +80,19 @@
   <!-- TODO: Get the below future skills to display in groups of three or less, spread horizontally -->
   <!-- Include links to articles/information about each skill -->
 
-  <div class="container-fluid">
-    <div *ngFor="let futureSkillGroup of futureSkillsGrouped;">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-12">
-          <div *ngFor="let futureSkill of futureSkillGroup">
-            <div class="btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-              <a type="button" class="btn btn-default">{{futureSkill.name}}</a>
-            </div>
+  
+    <div *ngFor="let futureSkillGroup of futureSkillsGrouped;" class="row row-no-gutters">
+        <div futureSkillsDirective [futureSkillGroup]="futureSkillGroup" class="" *ngFor="let futureSkill of futureSkillGroup">
+
+
+          <div class="future-skill-button btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+            <a [attr.href]="futureSkill.infoLink" target="_blank" type="button" class="btn btn-default">{{futureSkill.name}}</a>
           </div>
+
         </div>
-      </div>
+            
     </div>
-  </div>
+  
 
 
 

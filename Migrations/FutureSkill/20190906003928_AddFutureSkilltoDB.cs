@@ -14,7 +14,8 @@ namespace Websites.Migrations.FutureSkill
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
-                    InterestLevel = table.Column<int>(nullable: false)
+                    InterestLevel = table.Column<int>(nullable: false),
+                    InfoLink = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

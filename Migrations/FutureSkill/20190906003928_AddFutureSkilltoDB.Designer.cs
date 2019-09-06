@@ -9,7 +9,7 @@ using Websites.Models;
 namespace Websites.Migrations.FutureSkill
 {
     [DbContext(typeof(FutureSkillContext))]
-    [Migration("20190905024739_AddFutureSkilltoDB")]
+    [Migration("20190906003928_AddFutureSkilltoDB")]
     partial class AddFutureSkilltoDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,8 @@ namespace Websites.Migrations.FutureSkill
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("InfoLink");
 
                     b.Property<int>("InterestLevel");
 

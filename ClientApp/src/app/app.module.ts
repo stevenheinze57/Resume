@@ -23,11 +23,12 @@ import { CardsComponent } from './home/cards/cards.component';
 import { IntroComponent } from './home/intro/intro.component';
 import { SkillsetService } from './resume/skillset/services/skillset-service.service';
 import { SubSkill } from './resume/skillset/models/subskill.model';
-import { SkillsResolver } from './resume/skillset/services/skills-resolver';
-import { SubSkillsResolver } from './resume/skillset/services/subskills-resolver';
 import { SkillsDirective } from './resume/skillset/directives/skills.directive';
 import { FutureSkill } from './resume/skillset/models/futureskill';
-import { FutureSkillsResolver } from './resume/skillset/services/futureskills-resolver';
+import { FutureSkillsDirective } from './resume/skillset/directives/futureskills.directive';
+import { SubSkillsResolver } from './resume/skillset/resolvers/subskills-resolver';
+import { FutureSkillsResolver } from './resume/skillset/resolvers/futureskills-resolver';
+import { SkillsResolver } from './resume/skillset/resolvers/skills-resolver';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -66,7 +67,8 @@ const appRoutes: Routes = [
     CarouselComponent,
     CardsComponent,
     IntroComponent,
-    SkillsDirective
+    SkillsDirective,
+    FutureSkillsDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

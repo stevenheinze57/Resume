@@ -24,6 +24,8 @@ namespace Websites.Migrations.FutureSkill
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("InfoLink");
+
                     b.Property<int>("InterestLevel");
 
                     b.Property<string>("Name");

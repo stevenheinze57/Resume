@@ -1,12 +1,11 @@
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
 import { Skill } from "../models/skill.model";
 import { Injectable } from "@angular/core";
-import { SkillsetService } from "./skillset-service.service";
 import { Observable } from "rxjs";
-import { SubSkill } from "../models/subskill.model";
+import { SkillsetService } from "../services/skillset-service.service";
 
 @Injectable()
-export class SubSkillsResolver implements Resolve<SubSkill[]> {
+export class SkillsResolver implements Resolve<Skill[]> {
 
   skillsetService: SkillsetService;
 
@@ -14,8 +13,8 @@ export class SubSkillsResolver implements Resolve<SubSkill[]> {
     this.skillsetService = service;
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<SubSkill[]> {
-    return this.skillsetService.getSubSkills();
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Skill[]> {
+    return this.skillsetService.getSkills();
   }
 
 }
