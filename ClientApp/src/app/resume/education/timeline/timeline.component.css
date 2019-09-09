@@ -56,7 +56,7 @@ li.timeline-item::before {
 }
 
 .timeline-logo {
-
+  float: right;
 }
 
 .timeline-text {

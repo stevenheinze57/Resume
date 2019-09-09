@@ -3,11 +3,13 @@
 
     <ul class="timeline">
       <li *ngFor="let timelineItem of timelineItems" class="timeline-item bg-white rounded ml-3 p-4 shadow">
-        <div class="timeline-arrow"></div>
-        <h2 class="h5 mb-0 timeline-title">{{ timelineItem.title }}</h2>
-        <img src="../../../../assets/images/{{ timelineItem.logoFileName }}"/>
-        <span class="small text-gray timeline-dates"><i class="fa fa-clock-o mr-1"></i>{{ timelineItem.startTime }} - {{ timelineItem.endTime }}</span>
-        <p class="timeline-text text-small mt-2 font-weight-light">{{ timelineItem.description }}</p>
+        <div>
+          <div class="timeline-arrow"></div>
+          <h2 class="h5 mb-0 timeline-title">{{ timelineItem.title }}</h2>
+          <img class="timeline-logo" src="../../../../assets/images/{{ timelineItem.logoFileName }}" />
+          <span class="small text-gray timeline-dates"><i class="fa fa-clock-o mr-1"></i>{{ timelineItem.startTime }} - {{ timelineItem.endTime }}</span>
+          <p class="timeline-text text-small mt-2 font-weight-light">{{ timelineItem.description }}</p>
+        </div>
       </li>
     </ul>
 
