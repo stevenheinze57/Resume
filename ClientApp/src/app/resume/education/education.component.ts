@@ -18,11 +18,11 @@ export class EducationComponent implements OnInit {
 
   constructTimeline() {
     this.timelineItems = [
-      new TimelineItem("Dundalk High School", "September 2009", "June 2013", "dundalk-high-logo", "Some dummy text....."),
-      new TimelineItem("Community College of Baltimore County", "September 2013", "May 2015", "ccbc-logo", "Some more dummy text....."),
-      new TimelineItem("Towson State University", "September 2015", "December 2017", "towson-logo", "Even more dummy text....."),
-      new TimelineItem("Self Taught Programming", "January 2018", "Present", "self-taught-logo", "Yet even more dummy text....."),
-      new TimelineItem("Future Education Plans", "Presnt", "TBD.", "future-education-logo", "it doesn't stop.....")
+      new TimelineItem("Dundalk High School", "September 2009", "June 2013", "dundalk-high-logo.png", "Some dummy text....."),
+      new TimelineItem("Community College of Baltimore County", "September 2013", "May 2015", "ccbc-logo.png", "Some more dummy text....."),
+      new TimelineItem("Towson State University", "September 2015", "December 2017", "towson-logo.png", "Even more dummy text....."),
+      new TimelineItem("Self Taught Programming", "January 2018", "Present", "self-taught-logo.png", "Yet even more dummy text....."),
+      new TimelineItem("Future Education Plans", "Presnt", "TBD.", "future-education-logo.png", "it doesn't stop.....")
     ];
   }
 
