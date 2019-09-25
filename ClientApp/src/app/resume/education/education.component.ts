@@ -13,7 +13,7 @@ export class EducationComponent implements OnInit {
   constructor() { }
   ngOnInit() {
     this.constructTimeline();
-    this.reversTimeline();
+    this.reverseTimeline();
   }
 
   constructTimeline() {
@@ -26,7 +26,7 @@ export class EducationComponent implements OnInit {
     ];
   }
 
-  reversTimeline() {
+  reverseTimeline() {
     this.timelineItems = this.timelineItems.reverse();
   }
 
