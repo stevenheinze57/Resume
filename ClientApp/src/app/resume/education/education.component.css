@@ -118,3 +118,8 @@
 .timeline-text {
   padding: 3%;
 }
+
+.timeline-img {
+  height: 50%;
+  width: 50%;
+}
