@@ -31,7 +31,6 @@ import { FutureSkillsResolver } from './resume/skillset/resolvers/futureskills-r
 import { SkillsResolver } from './resume/skillset/resolvers/skills-resolver';
 import { CurrentSkillsComponent } from './resume/skillset/current-skills/current-skills.component';
 import { FutureSkillsComponent } from './resume/skillset/future-skills/future-skills.component';
-import { TimelineComponent } from './resume/education/timeline/timeline.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -73,8 +72,7 @@ const appRoutes: Routes = [
     SkillsDirective,
     FutureSkillsDirective,
     CurrentSkillsComponent,
-    FutureSkillsComponent,
-    TimelineComponent
+    FutureSkillsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
