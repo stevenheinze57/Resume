@@ -40,6 +40,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\resume\work-experience\models\" />
+    <Folder Include="ClientApp\src\app\resume\work-experience\resolvers\" />
+    <Folder Include="ClientApp\src\app\resume\work-experience\services\" />
     <Folder Include="ClientApp\src\app\services\" />
     <Folder Include="Migrations\" />
   </ItemGroup>

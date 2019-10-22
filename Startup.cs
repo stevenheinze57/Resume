@@ -30,6 +30,10 @@ namespace Websites
                 (opt => opt.UseSqlServer(Configuration["Data:Connection:ConnectionString"]));
             services.AddDbContext<FutureSkillContext>
                 (opt => opt.UseSqlServer(Configuration["Data:Connection:ConnectionString"]));
+            services.AddDbContext<WorkPositionContext>
+                (opt => opt.UseSqlServer(Configuration["Data:Connection:ConnectionString"]));
+            services.AddDbContext<WorkExperienceContext>
+                (opt => opt.UseSqlServer(Configuration["Data:Connection:ConnectionString"]));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // Auto Mapper Configurations
