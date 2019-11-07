@@ -9,7 +9,7 @@ using Websites.Models;
 namespace Websites.Migrations.WorkExperience
 {
     [DbContext(typeof(WorkExperienceContext))]
-    [Migration("20191022033721_AddWorkExperiencetoDB")]
+    [Migration("20191107033500_AddWorkExperiencetoDB")]
     partial class AddWorkExperiencetoDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,7 +26,7 @@ namespace Websites.Migrations.WorkExperience
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Description");
+                    b.Property<string>("Description");
 
                     b.Property<int>("WorkPositionId");
 

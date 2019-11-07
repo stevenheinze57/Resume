@@ -24,7 +24,7 @@ namespace Websites.Migrations.WorkExperience
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Description");
+                    b.Property<string>("Description");
 
                     b.Property<int>("WorkPositionId");
 

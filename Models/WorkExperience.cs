@@ -9,6 +9,6 @@ namespace Websites.Models
     {
         public int Id { get; set; }
         public int WorkPositionId { get; set; }
-        public int Description { get; set; }
+        public String Description { get; set; }
     }
 }

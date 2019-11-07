@@ -14,7 +14,7 @@ namespace Websites.Migrations.WorkExperience
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     WorkPositionId = table.Column<int>(nullable: false),
-                    Description = table.Column<int>(nullable: false)
+                    Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
