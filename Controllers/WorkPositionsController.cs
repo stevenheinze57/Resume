@@ -9,12 +9,12 @@ using Websites.Models;
 namespace Websites.Controllers
 {
     [Route("api/[controller]")]
-    public class WorkPositionController
+    public class WorkPositionsController
     {
 
         private readonly WorkPositionContext _workpositioncontext;
 
-        public WorkPositionController(WorkPositionContext workexperiencecontext)
+        public WorkPositionsController(WorkPositionContext workexperiencecontext)
         {
             this._workpositioncontext = workexperiencecontext;
         }

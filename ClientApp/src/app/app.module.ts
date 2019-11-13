@@ -31,6 +31,9 @@ import { FutureSkillsResolver } from './resume/skillset/resolvers/futureskills-r
 import { SkillsResolver } from './resume/skillset/resolvers/skills-resolver';
 import { CurrentSkillsComponent } from './resume/skillset/current-skills/current-skills.component';
 import { FutureSkillsComponent } from './resume/skillset/future-skills/future-skills.component';
+import { WorkExperienceService } from './resume/work-experience/services/work-experience-service.service';
+import { WorkExperienceResolver } from './resume/work-experience/resolvers/workexperience-resolver';
+import { WorkPositionResolver } from './resume/work-experience/resolvers/workposition-resolver';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -39,7 +42,7 @@ const appRoutes: Routes = [
     path: 'resume', component: ResumeComponent, children: [
       { path: 'skillset', component: SkillsetComponent, resolve: { skillsData: SkillsResolver, subSkillsData: SubSkillsResolver, futureSkillsData: FutureSkillsResolver } },
       { path: 'education', component: EducationComponent },
-      { path: 'workexperience', component: WorkExperienceComponent },
+      { path: 'workexperience', component: WorkExperienceComponent, resolve: { workExperiencesData: WorkExperienceResolver, workPositionsData: WorkPositionResolver } },
       { path: 'portfolio', component: PortfolioComponent },
       { path: 'contact', component: ContactComponent }
     ]
@@ -82,7 +85,15 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [SkillsetService, SkillsResolver, SubSkillsResolver, FutureSkillsResolver],
+  providers: [
+    SkillsetService,
+    SkillsResolver,
+    SubSkillsResolver,
+    FutureSkillsResolver,
+    WorkExperienceService,
+    WorkExperienceResolver,
+    WorkPositionResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

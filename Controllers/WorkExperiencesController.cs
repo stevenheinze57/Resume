@@ -8,12 +8,12 @@ using Websites.Models;
 namespace Websites.Controllers
 {
     [Route("api/[controller]")]
-    public class WorkExperienceController
+    public class WorkExperiencesController
     {
 
         private readonly WorkExperienceContext _workexperiencecontext;
 
-        public WorkExperienceController(WorkExperienceContext workexperiencecontext)
+        public WorkExperiencesController(WorkExperienceContext workexperiencecontext)
         {
             this._workexperiencecontext = workexperiencecontext;
         }
