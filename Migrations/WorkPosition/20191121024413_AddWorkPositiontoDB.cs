@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Websites.Migrations.WorkPosition
@@ -15,8 +16,8 @@ namespace Websites.Migrations.WorkPosition
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Company = table.Column<string>(nullable: true),
                     Role = table.Column<string>(nullable: true),
-                    StartDate = table.Column<string>(nullable: true),
-                    EndDate = table.Column<string>(nullable: true)
+                    StartDate = table.Column<DateTime>(nullable: false),
+                    EndDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

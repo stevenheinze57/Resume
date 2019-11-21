@@ -37,10 +37,7 @@ export class WorkExperienceComponent implements OnInit {
   }
 
   sortWorkPositions() {
-    // Sort them based on date (Most recent position first)
-    // Figure out how to change the workPosition data model in SQL and the backend to be date/time
-    // Then when it gets passed to the frontend here its just a matter of comparing the two
-    // The format however should be MM/YYYY (No days in the date, just months and years)
+    this.workPositions = this.workPositionsSorter(this.workPositions);
   }
   
   mapWorkExperiences() {
@@ -58,4 +55,15 @@ export class WorkExperienceComponent implements OnInit {
   groupWorkPositions() {
     // Group Skills in the following pattern: 2,1,2,1,2,1,2,1,2.....
   }
+
+  workPositionsSorter(dataToSort) {
+    return dataToSort.sort(function (a, b) {
+      if (a.endDate >= b.endDate) {
+        return -1;
+      } else {
+        return 1;
+      }
+    );
+  }
+
 }

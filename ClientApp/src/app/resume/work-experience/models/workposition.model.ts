@@ -4,7 +4,7 @@ export class WorkPosition {
   public id: number;
   public company: string;
   public role: string;
-  public startDate: string;
-  public endDate: string;
+  public startDate: Date;
+  public endDate: Date;
   public workExperiences: WorkExperience[];
 }
