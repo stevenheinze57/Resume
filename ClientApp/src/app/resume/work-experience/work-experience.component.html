@@ -12,6 +12,7 @@
   </div>
 </div>
 <div class="horizontal-item-divider"></div>
+
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 work-experience-item">
     <h3 class="work-experience-item-heading">Item 3 Heading</h3>
@@ -25,9 +26,13 @@
 <!-- Take all backend data and populate it into lists (model what you did in the skills component) -->
 
 <h1 class="work-experience-heading">My Work Experience</h1>
-<div class="row">
-  <div class="">
-
+<div *ngFor="let workPositionsGroup of workPositionsGrouped" class="row">
+  <div workPositionsDirective [workPositionsGroup]="workPositionsGroup" *ngFor="let workPosition of workPositionsGroup" class="">
+    <h3 class="work-experience-item-heading">{{ workPosition.role }} at {{ workPosition.company }}</h3>
+    <ul>
+      <li *ngFor="let workExperience of workPosition.workExperiences">{{ workExperience.description }}</li>
+    </ul>
   </div>
+  <div class="horizontal-item-divider"></div>
 </div>
 <div class="horizontal-item-divider"></div>

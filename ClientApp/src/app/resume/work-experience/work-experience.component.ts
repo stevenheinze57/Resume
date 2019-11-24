@@ -14,7 +14,7 @@ export class WorkExperienceComponent implements OnInit {
   @Output() workPositions: WorkPosition[] = [];
   renderWorkExperience: boolean = false;
 
-  @Output() workPositionsGrouped: any[] = [];
+  workPositionsGrouped: any[] = [];
 
   constructor(private route: ActivatedRoute) {
   }
