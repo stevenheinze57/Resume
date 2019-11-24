@@ -37,7 +37,7 @@
     <None Remove="ClientApp\src\app\resume\skillset\services\futureskills-resolver.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\services\skills-resolver.ts" />
     <None Remove="ClientApp\src\app\resume\skillset\services\subskills-resolver.ts" />
-    <None Remove="ClientApp\src\app\resume\work-experience\directives\workexperiences.directive.ts" />
+    <None Remove="ClientApp\src\app\resume\work-experience\directives\workpositions.directive.ts" />
     <None Remove="ClientApp\src\app\resume\work-experience\models\workexperience.model.ts" />
     <None Remove="ClientApp\src\app\resume\work-experience\models\workposition.model.ts" />
     <None Remove="ClientApp\src\app\resume\work-experience\resolvers\workexperience-resolver.ts" />
@@ -60,7 +60,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\resolvers\futureskills-resolver.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\resolvers\skills-resolver.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\skillset\resolvers\subskills-resolver.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\resume\work-experience\directives\workexperiences.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\resume\work-experience\directives\workpositions.directive.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\work-experience\models\workexperience.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\work-experience\models\workposition.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\resume\work-experience\resolvers\workexperience-resolver.ts" />

@@ -34,6 +34,7 @@ import { FutureSkillsComponent } from './resume/skillset/future-skills/future-sk
 import { WorkExperienceService } from './resume/work-experience/services/work-experience-service.service';
 import { WorkExperienceResolver } from './resume/work-experience/resolvers/workexperience-resolver';
 import { WorkPositionResolver } from './resume/work-experience/resolvers/workposition-resolver';
+import { WorkPositionsDirective } from './resume/work-experience/directives/workpositions.directive';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     SkillsDirective,
     FutureSkillsDirective,
     CurrentSkillsComponent,
-    FutureSkillsComponent
+    FutureSkillsComponent,
+    WorkPositionsDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

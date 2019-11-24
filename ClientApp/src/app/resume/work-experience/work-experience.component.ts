@@ -14,6 +14,8 @@ export class WorkExperienceComponent implements OnInit {
   @Output() workPositions: WorkPosition[] = [];
   renderWorkExperience: boolean = false;
 
+  @Output() workPositionsGrouped: any[] = [];
+
   constructor(private route: ActivatedRoute) {
   }
 
@@ -30,6 +32,7 @@ export class WorkExperienceComponent implements OnInit {
       this.groupWorkPositions();
       this.renderWorkExperience = true;
     }
+    console.log(this.workPositionsGrouped)
   }
 
   checkData(data: any[]) {
@@ -53,7 +56,28 @@ export class WorkExperienceComponent implements OnInit {
   }
 
   groupWorkPositions() {
-    // Group Skills in the following pattern: 2,1,2,1,2,1,2,1,2.....
+    var tempArray = [];
+    var tempIndex = 0;
+    var arraySizeToggle = false;
+    for (let x = 0; x < this.workPositions.length; x++) {
+      tempArray.push(this.workPositions[x]);
+      tempIndex++;
+      if (tempIndex == 2) {
+        this.workPositionsGrouped.push(tempArray)
+        arraySizeToggle = true;
+        tempArray = [];
+        tempIndex = 0;
+      } else if (arraySizeToggle && this.workPositions.length == x + 2) {
+        continue;
+      } else if (arraySizeToggle && this.workPositions.length == x + 1) {
+        this.workPositionsGrouped.push(tempArray)
+      } else if (arraySizeToggle) {
+        this.workPositionsGrouped.push(tempArray);
+        arraySizeToggle = false;
+        tempArray = [];
+        tempIndex = 0;
+      }
+    }
   }
 
   workPositionsSorter(dataToSort) {
