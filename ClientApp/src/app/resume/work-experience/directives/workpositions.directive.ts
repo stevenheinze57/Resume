@@ -15,8 +15,9 @@ export class WorkPositionsDirective implements OnInit {
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
-    //console.log(this.futureSkillGroup)
     this.setColumnWidth()
+    this.setStartMonthAndYear()
+    this.setEndMonthAndYear()
   }
 
   setColumnWidth() {
@@ -28,6 +29,14 @@ export class WorkPositionsDirective implements OnInit {
       this.workPositionColumnLength = this.oneColumn;
       console.log("workPositionGroup Length is not equal to 1 or 2")
     }
+  }
+
+  setStartMonthAndYear() {
+    // Figure out a way to bind this variable to the text in html
+  }
+
+  setEndMonthAndYear() {
+    // Figure out a way to bind this variable to the text in html
   }
 
 }
