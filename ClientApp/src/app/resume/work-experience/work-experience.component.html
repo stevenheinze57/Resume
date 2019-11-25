@@ -1,34 +1,13 @@
 
-<h1 class="work-experience-heading">My Work Experience</h1>
-
-<div class="row">
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 work-experience-item">
-    <h3 class="work-experience-item-heading">Item 1 Heading</h3>
-    <p>Et kasd sit sit qui sit aliquam autem sea et labore voluptua no ipsum at ut nonumy aliquyam sit justo gubergren magna accusam sed dolor eros clita duis kasd facilisis nibh stet clita sanctus justo</p>
-  </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 work-experience-item">
-    <h3 class="work-experience-item-heading">Item 2 Heading</h3>
-    <p>Vel facilisis eu et ut nisl magna feugiat gubergren facilisis iusto tation sit magna ut amet iusto dolore elitr gubergren sit velit duo et no nonumy eos ipsum stet feugiat in eu laoreet ipsum amet sea accusam sit illum sit erat volutpat dolor amet sed</p>
-  </div>
-</div>
-<div class="horizontal-item-divider"></div>
-
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 work-experience-item">
-    <h3 class="work-experience-item-heading">Item 3 Heading</h3>
-    <p>Magna justo stet lorem accusam ea nostrud congue eos eu elitr est ipsum aliquyam ut vel voluptua clita accusam et dolor takimata in eum dolore diam quis lorem luptatum justo ipsum nonumy vero sed et exerci invidunt eros est vero sadipscing illum et consequat et ex blandit nonumy blandit dolor nobis clita iriure odio velit at erat sit et magna aliquam exerci ipsum diam voluptua ipsum ad takimata voluptua et sit consequat takimata sit vel illum sed ipsum accumsan dolor est labore et duo dolore sea dolor ipsum velit nihil vel dignissim esse takimata invidunt labore sit duis gubergren justo</p>
-  </div>
-</div>
-<div class="horizontal-item-divider"></div>
-
 <!-- Just create a list similar to what you ave for your work experience here: https://stevenheinze.wordpress.com/ -->
 <!-- Include ALL of your work experience -->
 <!-- Take all backend data and populate it into lists (model what you did in the skills component) -->
 
 <h1 class="work-experience-heading">My Work Experience</h1>
 <div *ngFor="let workPositionsGroup of workPositionsGrouped" class="row">
-  <div workPositionsDirective [workPositionsGroup]="workPositionsGroup" *ngFor="let workPosition of workPositionsGroup" class="">
+  <div workPositionsGroupDirective [workPositionsGroup]="workPositionsGroup" *ngFor="let workPosition of workPositionsGroup" class="">
     <h3 class="work-experience-item-heading">{{ workPosition.role }} at {{ workPosition.company }}</h3>
+    <h6 workPositionDirective class="work-experience-item-heading">{{ workPosition.startMonthAndYear }} - {{ workPosition.endMonthAndYear }}</h6>
     <ul>
       <li *ngFor="let workExperience of workPosition.workExperiences">{{ workExperience.description }}</li>
     </ul>

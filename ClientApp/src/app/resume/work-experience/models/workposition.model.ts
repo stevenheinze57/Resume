@@ -7,4 +7,6 @@ export class WorkPosition {
   public startDate: Date;
   public endDate: Date;
   public workExperiences: WorkExperience[];
+  public startMonthAndYear: string;
+  public endMonthAndYear: string;
 }
