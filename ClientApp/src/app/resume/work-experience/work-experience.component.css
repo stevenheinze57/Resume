@@ -1,11 +1,13 @@
 
 .work-experience-heading {
   text-align: center;
+  clear: both;
 }
 
 .work-experience-item-heading {
   text-align: center;
   color: #ED8D8D;
+  clear: both;
 }
 
 .work-experience-item {
@@ -18,6 +20,7 @@
   height: 1px;
   width: 100%;
   border-top: 1px solid #ED8D8D;
+  clear: both;
 }
 
 .vertical-item-divider {
@@ -26,4 +29,11 @@
   width: 1px;
   height: 100%;
   border-left: 1px solid #ED8D8D;
+}
+
+.work-position-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
 }

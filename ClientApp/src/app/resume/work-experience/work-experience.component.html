@@ -1,6 +1,8 @@
 <h1 class="work-experience-heading">My Work Experience</h1>
+<div class="horizontal-item-divider"></div>
 <div *ngFor="let workPositionsGroup of workPositionsGrouped" class="row">
   <div workPositionsGroupDirective [workPositionsGroup]="workPositionsGroup" *ngFor="let workPosition of workPositionsGroup" class="">
+    <img workPositionsLogoDirective [workPosition]="workPosition.company" src="" class="work-position-logo" />
     <h3 class="work-experience-item-heading">{{ workPosition.role }} at {{ workPosition.company }}</h3>
     <h6 workPositionDirective class="work-experience-item-heading">{{ workPosition.startMonthAndYear }} - {{ workPosition.endMonthAndYear }}</h6>
     <ul>
@@ -9,8 +11,6 @@
   </div>
   <div class="horizontal-item-divider"></div>
 </div>
-<div class="horizontal-item-divider"></div>
-
 <!-- Just create a list similar to what you ave for your work experience here: https://stevenheinze.wordpress.com/ -->
 <!-- Add thumbnail images of the company logos -->
 <!-- Center all of the lists -->
