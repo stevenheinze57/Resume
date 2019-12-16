@@ -2,17 +2,29 @@
 <div class="horizontal-item-divider"></div>
 <div *ngFor="let workPositionsGroup of workPositionsGrouped" class="row">
   <div workPositionsGroupDirective [workPositionsGroup]="workPositionsGroup" *ngFor="let workPosition of workPositionsGroup" class="">
-    <img workPositionsLogoDirective [workPosition]="workPosition.company" src="" class="work-position-logo" />
-    <h3 class="work-experience-item-heading">{{ workPosition.role }} at {{ workPosition.company }}</h3>
-    <h6 workPositionDirective class="work-experience-item-heading">{{ workPosition.startMonthAndYear }} - {{ workPosition.endMonthAndYear }}</h6>
-    <ul>
-      <li *ngFor="let workExperience of workPosition.workExperiences">{{ workExperience.description }}</li>
-    </ul>
+    <div class="work-position-item-heading-group">
+      <img workPositionsLogoDirective [workPosition]="workPosition.company" src="" class="work-position-logo pull-left" />
+      <h3 class="work-experience-item-heading">{{ workPosition.role }} at {{ workPosition.company }}</h3>
+      <h6 workPositionDirective class="work-experience-item-heading">{{ workPosition.startMonthAndYear }} - {{ workPosition.endMonthAndYear }}</h6>
+    </div>
+    <div class="work-experiences-group">
+      <ul>
+        <li *ngFor="let workExperience of workPosition.workExperiences">{{ workExperience.description }}</li>
+      </ul>
+    </div>
   </div>
   <div class="horizontal-item-divider"></div>
 </div>
+
 <!-- Just create a list similar to what you ave for your work experience here: https://stevenheinze.wordpress.com/ -->
-<!-- Add thumbnail images of the company logos -->
+
+<!-- Center the costco image more, play around with it in paint 3d -->
+
 <!-- Center all of the lists -->
+
 <!-- Maybe try to remove the bottom line -->
-<!-- Get the dates working and outputting correctly -->
+
+<!-- Add a boolean variable to the work positions models stating if it is your current position or not so you can output "Present"
+     as the end date -->
+
+<!-- Add more work experiences for the Sr App Dev role -->

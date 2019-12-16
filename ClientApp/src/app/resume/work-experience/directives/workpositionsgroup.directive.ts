@@ -34,24 +34,57 @@ export class WorkPositionsGroupDirective implements OnInit {
   setStartMonthAndYear() {
     // Figure out a way to bind this variable to the text in html
     for (let x = 0; x < this.workPositionsGroup.length; x++) {
-      //this.workPositionsGroup[x].startMonthAndYear = this.determineMonth(this.workPositionsGroup[x].startDate.toString());
-      this.workPositionsGroup[x].startMonthAndYear = "Test";
+      var startMonth = this.determineMonth(this.workPositionsGroup[x].startDate.toString());
+      var startYear = this.determineYear(this.workPositionsGroup[x].startDate.toString());
+      this.workPositionsGroup[x].startMonthAndYear = startMonth + " " + startYear;
     }
   }
 
   setEndMonthAndYear() {
     // Figure out a way to bind this variable to the text in html
     for (let x = 0; x < this.workPositionsGroup.length; x++) {
-      this.workPositionsGroup[x].endMonthAndYear = "Test";
+      var endMonth = this.determineMonth(this.workPositionsGroup[x].endDate.toString());
+      var endYear = this.determineYear(this.workPositionsGroup[x].endDate.toString());
+      this.workPositionsGroup[x].endMonthAndYear = endMonth + " " + endYear;
     }
   }
 
   determineMonth(dateTimeObj) {
     var month = dateTimeObj.substring(5, 7)
     console.log(month)
-    //switch (dateTimeObj) {
-    //  case
-    //}
+    switch (month) {
+      case "01": 
+        return "January";
+      case "02":
+        return "February";
+      case "03":
+        return "March";
+      case "04":
+        return "April";
+      case "05":
+        return "May";
+      case "06":
+        return "June";
+      case "07":
+        return "July";
+      case "08":
+        return "August";
+      case "09":
+        return "September";
+      case "10":
+        return "October";
+      case "11":
+        return "November";
+      case "12":
+        return "December";
+      default:
+        return "N/A"
+    }
+  }
+
+  determineYear(dateTimeObj) {
+    var year = dateTimeObj.substring(0, 4)
+    return year
   }
 
 }
