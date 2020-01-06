@@ -17,7 +17,8 @@ namespace Websites.Migrations.WorkPosition
                     Company = table.Column<string>(nullable: true),
                     Role = table.Column<string>(nullable: true),
                     StartDate = table.Column<DateTime>(nullable: false),
-                    EndDate = table.Column<DateTime>(nullable: false)
+                    EndDate = table.Column<DateTime>(nullable: false),
+                    CurrentPosition = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

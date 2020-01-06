@@ -27,6 +27,8 @@ namespace Websites.Migrations.WorkPosition
 
                     b.Property<string>("Company");
 
+                    b.Property<bool>("CurrentPosition");
+
                     b.Property<DateTime>("EndDate");
 
                     b.Property<string>("Role");

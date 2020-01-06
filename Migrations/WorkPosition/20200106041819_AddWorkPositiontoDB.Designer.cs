@@ -10,7 +10,7 @@ using Websites.Models;
 namespace Websites.Migrations.WorkPosition
 {
     [DbContext(typeof(WorkPositionContext))]
-    [Migration("20191121024413_AddWorkPositiontoDB")]
+    [Migration("20200106041819_AddWorkPositiontoDB")]
     partial class AddWorkPositiontoDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,8 @@ namespace Websites.Migrations.WorkPosition
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Company");
+
+                    b.Property<bool>("CurrentPosition");
 
                     b.Property<DateTime>("EndDate");
 

@@ -32,7 +32,6 @@ export class WorkPositionsGroupDirective implements OnInit {
   }
 
   setStartMonthAndYear() {
-    // Figure out a way to bind this variable to the text in html
     for (let x = 0; x < this.workPositionsGroup.length; x++) {
       var startMonth = this.determineMonth(this.workPositionsGroup[x].startDate.toString());
       var startYear = this.determineYear(this.workPositionsGroup[x].startDate.toString());
@@ -41,11 +40,14 @@ export class WorkPositionsGroupDirective implements OnInit {
   }
 
   setEndMonthAndYear() {
-    // Figure out a way to bind this variable to the text in html
     for (let x = 0; x < this.workPositionsGroup.length; x++) {
-      var endMonth = this.determineMonth(this.workPositionsGroup[x].endDate.toString());
-      var endYear = this.determineYear(this.workPositionsGroup[x].endDate.toString());
-      this.workPositionsGroup[x].endMonthAndYear = endMonth + " " + endYear;
+      if (this.workPositionsGroup[x].currentPosition) {
+        this.workPositionsGroup[x].endMonthAndYear = "Present"
+      } else {
+        var endMonth = this.determineMonth(this.workPositionsGroup[x].endDate.toString());
+        var endYear = this.determineYear(this.workPositionsGroup[x].endDate.toString());
+        this.workPositionsGroup[x].endMonthAndYear = endMonth + " " + endYear;
+      }
     }
   }
 

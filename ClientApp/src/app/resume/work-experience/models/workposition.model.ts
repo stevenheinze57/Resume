@@ -9,4 +9,5 @@ export class WorkPosition {
   public workExperiences: WorkExperience[];
   public startMonthAndYear: string;
   public endMonthAndYear: string;
+  public currentPosition: boolean;
 }
