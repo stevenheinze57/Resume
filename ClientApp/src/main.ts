@@ -28,7 +28,7 @@ platformBrowserDynamic(providers).bootstrapModule(AppModule)
 
 // Terrain stuff.
 var background = document.getElementById("bgCanvas"),
-  bgCtx = background.getContext("2d"),
+  //bgCtx = background.getContext("2d"),
   width = window.innerWidth,
   height = document.body.offsetHeight;
 

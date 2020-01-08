@@ -36,6 +36,7 @@ import { WorkExperienceResolver } from './resume/work-experience/resolvers/worke
 import { WorkPositionResolver } from './resume/work-experience/resolvers/workposition-resolver';
 import { WorkPositionsGroupDirective } from './resume/work-experience/directives/workpositionsgroup.directive';
 import { WorkPositionsLogoDirective } from './resume/work-experience/directives/workpositionslogo.directive';
+import { PortfolioItem } from './resume/portfolio/models/portfolio-item.model';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -79,7 +80,8 @@ const appRoutes: Routes = [
     CurrentSkillsComponent,
     FutureSkillsComponent,
     WorkPositionsGroupDirective,
-    WorkPositionsLogoDirective
+    WorkPositionsLogoDirective,
+    PortfolioItem
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
