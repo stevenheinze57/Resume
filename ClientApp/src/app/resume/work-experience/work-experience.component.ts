@@ -87,7 +87,7 @@ export class WorkExperienceComponent implements OnInit {
       } else {
         return 1;
       }
-    )
+    ))
   }
 
 }
