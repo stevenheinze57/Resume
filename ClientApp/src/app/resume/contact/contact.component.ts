@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule, HttpResponse, HttpEvent } from '@angular/common/http';
 import { map } from 'rxjs/operator/map';
 import {ContactForm } from './models/contact-form.model'
+import { HttpRequest } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-contact',
@@ -37,7 +38,9 @@ export class ContactComponent implements OnInit {
   }
 
   sendEmail(message: ContactForm) {
-    this.emailSender.post('https://localhost:5001/api/contactform', message.getMessage())
+    this.emailSender.post('https://localhost:5001/api/contactform', JSON.stringify(message), { headers: { 'Content-Type': 'application/json' }, responseType: 'text' }).subscribe(response => {
+      console.log(response);
+    });
   }
 
 }

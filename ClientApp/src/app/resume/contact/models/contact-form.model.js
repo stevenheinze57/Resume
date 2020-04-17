@@ -7,13 +7,6 @@ var ContactForm = /** @class */ (function () {
         this.phoneNumber = phoneNumber;
         this.message = message;
     }
-    ContactForm.prototype.getMessage = function () {
-        return "Someone tried to contact you... \n" +
-            "Name: " + this.name + "\n" +
-            "Email: " + this.email + "\n" +
-            "Phone: " + this.phoneNumber + "\n" +
-            "Message: " + this.message;
-    };
     return ContactForm;
 }());
 exports.ContactForm = ContactForm;
