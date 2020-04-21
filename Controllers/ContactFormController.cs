@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,15 +14,22 @@ namespace Websites.Controllers
     public class ContactFormController : Controller
     {
 
-        SmtpClient client;
+        private SmtpClient client;
+        private IConfiguration _SmtpSettings;
+        private IConfiguration _EmailSettings;
 
-        public ContactFormController()
+        public ContactFormController(IConfiguration configs)
         {
+            IConfiguration ContactSettings = configs.GetSection("ContactSettings");
+            this._EmailSettings = ContactSettings.GetSection("Email");
+            this._SmtpSettings = ContactSettings.GetSection("Smtp");
+            IConfiguration SmtpCredentials = _SmtpSettings.GetSection("Credentials");
+
             this.client = new SmtpClient();
             this.client.UseDefaultCredentials = false;
-            this.client.Credentials = new NetworkCredential("validEmail", "password");
-            this.client.Host = "smtp.gmail.com";
-            this.client.Port = int.Parse("587");
+            this.client.Credentials = new NetworkCredential(SmtpCredentials.GetValue<string>("Username"), SmtpCredentials.GetValue<string>("Password"));
+            this.client.Host = _SmtpSettings.GetValue<string>("Host");
+            this.client.Port = int.Parse(_SmtpSettings.GetValue<string>("Port"));
             this.client.EnableSsl = true;
             this.client.DeliveryMethod = SmtpDeliveryMethod.Network;
         }
@@ -31,12 +39,12 @@ namespace Websites.Controllers
         {
             try
             {
-                Console.Write("***** " + request.message + " *****");
+                Console.Write("***** " + request.Message + " *****");
                 MailMessage emailMessage = new MailMessage();
-                emailMessage.From = new MailAddress("stevenheinze57@gmail.com");
-                emailMessage.To.Add("stevenheinze57@gmail.com");
-                emailMessage.Body = request.message;
+                emailMessage.From = new MailAddress(_EmailSettings.GetValue<string>("FromField"));
+                emailMessage.To.Add(_EmailSettings.GetValue<string>("ToField"));
                 emailMessage.Subject = "New Contact Form Submission";
+                emailMessage.Body = ConstructEmailMessage(request.Name, request.Email, request.PhoneNumber, request.Message);
                 client.Send(emailMessage);
                 return Ok("Everything good");
             } catch (Exception e)
@@ -44,6 +52,15 @@ namespace Websites.Controllers
                 Console.Write("***** " + e.Message + " *****");
                 return BadRequest();
             }
+        }
+
+        private string ConstructEmailMessage(string Name, string Email, string PhoneNumber, string Message)
+        {
+            return "Someon tried to contact you... \n \n" +
+                "Name: " + Name + "\n \n" + 
+                "Email: " + Email + "\n \n" +
+                "Phone: " + PhoneNumber + "\n \n" +
+                "Message: " + Message;
         }
 
     }
