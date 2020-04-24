@@ -1,0 +1,37 @@
+
+.dev-help-header {
+  text-align: center;
+}
+
+.horizontal-item-divider {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid #ED8D8D;
+  clear: both;
+}
+
+p {
+  font-size: 150%;
+}
+
+.blog {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.blog-container {
+  padding: 2%;
+}
+
+img {
+  padding-right: 2%;
+  padding-bottom: 1%;
+  height: 25%;
+  width: 25%;
+}
+
+.blog-post-timestamp {
+  padding-top: 1%;
+}

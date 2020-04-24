@@ -10,7 +10,6 @@ import { NavComponent } from './nav/nav.component';
 import { ContactComponent } from './resume/contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { ResumeComponent } from './resume/resume.component';
-import { CoolstuffComponent } from './coolstuff/coolstuff.component';
 import { DevhelpComponent } from './devhelp/devhelp.component';
 import { SandboxProjectsComponent } from './sandbox-projects/sandbox-projects.component';
 import { FooterComponent } from './footer/footer.component';
@@ -49,7 +48,6 @@ const appRoutes: Routes = [
       { path: 'contact', component: ContactComponent }
     ]
   },
-  { path: 'coolstuff', component: CoolstuffComponent },
   { path: 'devhelp', component: DevhelpComponent },
   { path: 'sandboxprojects', component: SandboxProjectsComponent },
   { path: '**', component: ErrorComponent }
@@ -63,7 +61,6 @@ const appRoutes: Routes = [
     ContactComponent,
     ErrorComponent,
     ResumeComponent,
-    CoolstuffComponent,
     DevhelpComponent,
     FooterComponent,
     SkillsetComponent,
