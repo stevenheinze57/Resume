@@ -36,3 +36,11 @@ p {
   border-top: 1px solid #ED8D8D;
   clear: both;
 }
+
+.submission-success {
+  color: green;
+}
+
+.submission-failure {
+  color: red;
+}

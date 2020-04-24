@@ -39,7 +39,6 @@ namespace Websites.Controllers
         {
             try
             {
-                Console.Write("***** " + request.Message + " *****");
                 MailMessage emailMessage = new MailMessage();
                 emailMessage.From = new MailAddress(_EmailSettings.GetValue<string>("FromField"));
                 emailMessage.To.Add(_EmailSettings.GetValue<string>("ToField"));
@@ -49,7 +48,6 @@ namespace Websites.Controllers
                 return Ok("Everything good");
             } catch (Exception e)
             {
-                Console.Write("***** " + e.Message + " *****");
                 return BadRequest();
             }
         }

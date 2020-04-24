@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule, HttpResponse, HttpEvent } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule, HttpResponse, HttpEvent, HttpResponseBase } from '@angular/common/http';
 import { map } from 'rxjs/operator/map';
 import {ContactForm } from './models/contact-form.model'
 import { HttpRequest } from 'selenium-webdriver/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -12,35 +14,38 @@ import { HttpRequest } from 'selenium-webdriver/http';
 })
 export class ContactComponent implements OnInit {
   
-  constructor(private emailSender: HttpClient) {  }
+  formSubmissionSuccessful: boolean = false
+  formSubmissionFailure: boolean = false
+  submissionBeingHandled: boolean = false 
 
-  ngOnInit() {
-  }
+  constructor(private emailSender: HttpClient) { }
 
-  onSubmitMessage(form: NgForm) {
+  ngOnInit() { }
+
+  async onSubmitMessage(form: NgForm) {
     const value = form.value;
-    console.log("onSubmitMessage called")
-    console.log(value.name)
-    console.log(value.email)
-    console.log(value.phoneNumber)
-    console.log(value.message)
-    let validFormInput: boolean = this.checkMessage(value.name, value.email, value.phoneNumber, value.message)
-    if (validFormInput) {
-      let emailMessage: ContactForm = new ContactForm(value.name, value.email, value.phoneNumber, value.message)
-      this.sendEmail(emailMessage)
-    }
-    form.reset()
+    this.formSubmissionSuccessful = false
+    this.formSubmissionFailure = false
+    this.submissionBeingHandled = true 
+    let emailMessage: ContactForm = new ContactForm(value.name, value.email, value.phoneNumber, value.message)
+    this.sendEmail(emailMessage, form)
   }
 
-  checkMessage(formName: string, formEmail: string, formPhone: string, formMessage: string): boolean {
-    // TODO: perform input validation on front end
-    return true
-  }
-
-  sendEmail(message: ContactForm) {
-    this.emailSender.post('https://localhost:5001/api/contactform', JSON.stringify(message), { headers: { 'Content-Type': 'application/json' }, responseType: 'text' }).subscribe(response => {
-      console.log(response);
-    });
+  async sendEmail(message: ContactForm, submittedForm: NgForm) {
+    await this.emailSender.post('https://localhost:5001/api/contactform', JSON.stringify(message), { headers: { 'Content-Type': 'application/json' }, responseType: 'text' }).subscribe(
+      next => {
+        this.formSubmissionSuccessful = true
+        this.formSubmissionFailure = false
+        this.submissionBeingHandled = false
+        submittedForm.reset()
+      },
+      error => {
+        this.formSubmissionSuccessful = false
+        this.formSubmissionFailure = true
+        this.submissionBeingHandled = false
+        submittedForm.reset()
+      }
+    );
   }
 
 }

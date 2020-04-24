@@ -12,13 +12,5 @@ export class ContactForm {
     this.phoneNumber = phoneNumber;
     this.message = message;
   }
-
-  //getMessage(): string {
-  //  return "Someone tried to contact you... \n" +
-  //    "Name: " + this.name + "\n" +
-  //    "Email: " + this.email + "\n" +
-  //    "Phone: " + this.phoneNumber + "\n" +
-  //    "Message: " + this.message 
-  //}
-
+  
 }
