@@ -8,7 +8,7 @@ using Websites.Models;
 namespace Websites.Controllers
 {
     [Route("api/[controller]")]
-    public class WorkExperiencesController
+    public class WorkExperiencesController : Controller 
     {
 
         private readonly WorkExperienceContext _workexperiencecontext;
@@ -19,9 +19,16 @@ namespace Websites.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<WorkExperience>> getSubSkills()
+        public ActionResult<IEnumerable<WorkExperience>> GetWorkExperiences()
         {
-            return _workexperiencecontext.WorkExperiences;
+            try
+            {
+                return Ok(_workexperiencecontext.WorkExperiences);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

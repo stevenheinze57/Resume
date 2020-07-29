@@ -20,9 +20,16 @@ namespace Websites.Controllers
 
         // GET: api/<controller>
         [HttpGet]
-        public ActionResult<IEnumerable<SubSkill>> getSubSkills()
+        public ActionResult<IEnumerable<SubSkill>> GetSubSkills()
         {
-            return _subskillcontext.SubSkills;
+            try
+            {
+                return Ok(_subskillcontext.SubSkills);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

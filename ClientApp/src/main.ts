@@ -19,15 +19,22 @@ if (environment.production) {
 platformBrowserDynamic(providers).bootstrapModule(AppModule)
   .catch(err => console.log(err));
 
+//(function () {
+//  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+//    window.setTimeout(callback, 1000 / 60);
+//  };
+//  window.requestAnimationFrame = requestAnimationFrame;
+//})();
+
 (function () {
-  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+  var requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || function (callback) {
     window.setTimeout(callback, 1000 / 60);
   };
-  window.requestAnimationFrame = requestAnimationFrame;
+  //window.requestAnimationFrame = requestAnimationFrame;
 })();
 
 // Terrain stuff.
-var background = document.getElementById("bgCanvas"),
+let background: HTMLCanvasElement = <HTMLCanvasElement> document.getElementById("bgCanvas"),
   bgCtx = background.getContext("2d"),
   width = window.innerWidth,
   height = document.body.offsetHeight;

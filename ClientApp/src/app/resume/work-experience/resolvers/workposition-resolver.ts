@@ -14,7 +14,7 @@ export class WorkPositionResolver implements Resolve<WorkPosition[]> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<WorkPosition[]> {
-    return this.workexperienceService.getWorkPositions('https://localhost:5001/api/');
+    return this.workexperienceService.getWorkPositions();
   }
 
 }

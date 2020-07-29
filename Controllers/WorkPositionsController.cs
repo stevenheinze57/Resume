@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Websites.Models;
+using System.Net;
 
 namespace Websites.Controllers
 {
     [Route("api/[controller]")]
-    public class WorkPositionsController
+    public class WorkPositionsController : Controller
     {
 
         private readonly WorkPositionContext _workpositioncontext;
@@ -20,9 +21,16 @@ namespace Websites.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<WorkPosition>> getSubSkills()
+        public ActionResult<IEnumerable<WorkPosition>> GetWorkPositions()
         {
-            return _workpositioncontext.WorkPositions;
+            try
+            {
+                return Ok(_workpositioncontext.WorkPositions);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
     }

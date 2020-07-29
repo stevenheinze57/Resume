@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { ContactComponent } from './resume/contact/contact.component';
+import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { ResumeComponent } from './resume/resume.component';
 import { DevhelpComponent } from './devhelp/devhelp.component';
@@ -44,12 +44,12 @@ const appRoutes: Routes = [
       { path: 'skillset', component: SkillsetComponent, resolve: { skillsData: SkillsResolver, subSkillsData: SubSkillsResolver, futureSkillsData: FutureSkillsResolver } },
       { path: 'education', component: EducationComponent },
       { path: 'workexperience', component: WorkExperienceComponent, resolve: { workExperiencesData: WorkExperienceResolver, workPositionsData: WorkPositionResolver } },
-      { path: 'portfolio', component: PortfolioComponent },
-      { path: 'contact', component: ContactComponent }
+      { path: 'portfolio', component: PortfolioComponent }
     ]
   },
   { path: 'devhelp', component: DevhelpComponent },
   { path: 'sandboxprojects', component: SandboxProjectsComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '**', component: ErrorComponent }
 ]
 

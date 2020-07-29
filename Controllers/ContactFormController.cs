@@ -35,7 +35,7 @@ namespace Websites.Controllers
         }
 
         [HttpPost]
-        public ActionResult<string> processContactForm([FromBody]ContactForm request)
+        public ActionResult<string> ProcessContactForm([FromBody]ContactForm request)
         {
             try
             {

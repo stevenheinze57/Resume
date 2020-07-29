@@ -20,7 +20,14 @@ namespace Websites.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<FutureSkill>> GetFutureSkills()
         {
-            return _futureSkillContext.FutureSkills;
+            try
+            {
+                return Ok(_futureSkillContext.FutureSkills);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         } 
 
     }
