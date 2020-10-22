@@ -6,6 +6,11 @@
 */node_modules
 **/node_modules
 
+*.vagrant/
+**.vagrant/
+*/.vagrant/
+**/.vagrant/
+
 # User-specific files
 *.suo
 *.user
