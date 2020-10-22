@@ -1,0 +1,31 @@
+
+.sandbox-projects-header {
+  text-align: center;
+}
+
+.horizontal-item-divider {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid #ED8D8D;
+  clear: both;
+}
+
+.projects-list {
+  background-color: #1b1b1b;
+  width: 75%;
+  border-top: 3px solid #ED8D8D;
+  border-left: 3px solid #ED8D8D;
+  border-right: 3px solid #ED8D8D;
+  border-bottom: 3px solid #ED8D8D;
+  border-top-left-radius: 3%;
+  border-top-right-radius: 3%;
+  border-bottom-left-radius: 3%;
+  border-bottom-right-radius: 3%;
+  padding: 3%;
+}
+
+.panel-heading {
+  font-size: 125%;
+}

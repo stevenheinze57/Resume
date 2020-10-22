@@ -1,0 +1,46 @@
+
+
+.portfolio-heading {
+  text-align: center;
+}
+
+p {
+  font-size: 150%;
+}
+
+.container-fluid {
+  text-align: center;
+}
+
+.input-group {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.form-control {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.form-group {
+  border: 3px solid #ED8D8D;
+  border-radius: 3%;
+  padding: 1%;
+}
+
+.horizontal-item-divider {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid #ED8D8D;
+  clear: both;
+}
+
+.submission-success {
+  color: green;
+}
+
+.submission-failure {
+  color: red;
+}
