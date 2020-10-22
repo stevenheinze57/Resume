@@ -1,1 +1,0 @@
-{"version":3,"file":"carouselslide.model.js","sourceRoot":"","sources":["carouselslide.model.ts"],"names":[],"mappings":";;AACA;IAOE,uBAAY,UAAkB,EAAE,UAAkB,EAAE,SAAiB,EAAE,WAAoB;QACzF,IAAI,CAAC,UAAU,GAAG,UAAU,CAAC;QAC7B,IAAI,CAAC,UAAU,GAAG,UAAU,CAAC;QAC7B,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;QAC3B,IAAI,CAAC,WAAW,GAAG,WAAW,CAAC;IACjC,CAAC;IACH,oBAAC;AAAD,CAAC,AAbD,IAaC;AAbY,sCAAa"}
