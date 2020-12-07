@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
 
   constructCardSets() {
     this.cardset1 = [
-      new Card("angular-and-netcore.jpeg", "Want to learn how to build a website similar to this? This website is built with a combination of .NET Core and Angular. Many tutorials exist demonstrating how to develop with this combination, and Udemy is a great place to look!", "https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/"),
+      new Card("angular-and-netcore.jpeg", "Want to learn how to build a website similar to this? Checkout this Udemy course!", "https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/"),
       new Card("pdf.jpeg", "Download a PDF version of my resume here! (coming soon...)", "../../../assets/files/Steven_G_Heinze_Resume.pdf")
     ];
     this.cardset2 = [
