@@ -32,7 +32,7 @@ export class ContactComponent implements OnInit {
   }
 
   async sendEmail(message: ContactForm, submittedForm: NgForm) {
-    await this.emailSender.post('https://localhost:5001/api/contactform', JSON.stringify(message), { headers: { 'Content-Type': 'application/json' }, responseType: 'text' }).subscribe(
+    await this.emailSender.post('http://104.129.131.154:5000/api/contactform', JSON.stringify(message), { headers: { 'Content-Type': 'application/json' }, responseType: 'text' }).subscribe(
       next => {
         this.formSubmissionSuccessful = true
         this.formSubmissionFailure = false

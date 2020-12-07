@@ -13,11 +13,11 @@ export class WorkExperienceService {
   constructor(private httpClient: HttpClient) { }
 
   getWorkPositions() {
-    return this.httpClient.get<WorkPosition[]>('https://localhost:5001/api/workpositions')
+    return this.httpClient.get<WorkPosition[]>('http://104.129.131.154:5000/api/workpositions')
   }
 
   getWorkExperiences() {
-    return this.httpClient.get<WorkExperience[]>('https://localhost:5001/api/workexperiences')
+    return this.httpClient.get<WorkExperience[]>('http://104.129.131.154:5000/api/workexperiences')
   }
 
 }

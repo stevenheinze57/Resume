@@ -3,7 +3,12 @@
     <div class="card">
       <img class="card-img-top" src="../../../assets/images/{{ card.cardImage }}" alt="Card Image">
       <div class="card-body">
-        <p class="card-text">{{ card.cardText }}</p>
+        <ng-container *ngIf="card.cardLink.includes('pdf'); else nonPdf">
+          <p class="card-text"><a href="{{ card.cardLink }}" download>{{ card.cardText }}</a></p>
+        </ng-container>
+        <ng-template #nonPdf>
+          <p class="card-text"><a href="{{ card.cardLink }}" target="_blank">{{ card.cardText }}</a></p>
+        </ng-template>
       </div>
     </div>
   </div>

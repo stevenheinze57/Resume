@@ -27,7 +27,7 @@ namespace Websites.Controllers
 
             this.client = new SmtpClient();
             this.client.UseDefaultCredentials = false;
-            this.client.Credentials = new NetworkCredential(SmtpCredentials.GetValue<string>("Username"), SmtpCredentials.GetValue<string>("Password"));
+            //this.client.Credentials = new NetworkCredential(SmtpCredentials.GetValue<string>("Username"), SmtpCredentials.GetValue<string>("Password"));
             this.client.Host = _SmtpSettings.GetValue<string>("Host");
             this.client.Port = int.Parse(_SmtpSettings.GetValue<string>("Port"));
             this.client.EnableSsl = true;

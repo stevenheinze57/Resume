@@ -16,15 +16,15 @@ export class SkillsetService {
   constructor(private httpClient: HttpClient) { }
 
   getSkills() {
-    return this.httpClient.get<Skill[]>('https://localhost:5001/api/skills'); 
+    return this.httpClient.get<Skill[]>('http://104.129.131.154:5000/api/skills'); 
   }
 
   getSubSkills() {
-    return this.httpClient.get<SubSkill[]>('https://localhost:5001/api/subskills');
+    return this.httpClient.get<SubSkill[]>('http://104.129.131.154:5000/api/subskills');
   }
 
   getFutureSkills() {
-    return this.httpClient.get<FutureSkill[]>('https://localhost:5001/api/futureskills');
+    return this.httpClient.get<FutureSkill[]>('http://104.129.131.154:5000/api/futureskills');
   }
 
 }
